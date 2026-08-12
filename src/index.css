@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+
+
+@keyframes heroImageReveal {
+  from {
+    opacity: 0;
+    transform: scale(1.05) translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes heroContentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-image {
+  opacity: 0;
+  animation: heroImageReveal 1.2s ease-out forwards;
+}
+
+.hero-label {
+  opacity: 0;
+  animation: heroContentReveal 0.7s ease-out 0.2s forwards;
+}
+
+.hero-heading {
+  opacity: 0;
+  animation: heroContentReveal 0.7s ease-out 0.35s forwards;
+}
+
+.hero-description {
+  opacity: 0;
+  animation: heroContentReveal 0.7s ease-out 0.5s forwards;
+}
+
+.hero-button {
+  opacity: 0;
+  animation: heroContentReveal 0.7s ease-out 0.65s forwards;
+}
+
+
+/* Respect users who prefer reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-image,
+  .hero-label,
+  .hero-heading,
+  .hero-description,
+  .hero-button {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* about page  */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.7s ease-out forwards;
+  opacity: 0;
+}
